@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    <h2>Cadastrar Produto</h2>
+    <form method="POST">
+        <input type="text" name="nome" placeholder="Nome do Produto" required><br>
+        <input type="number" name="quantidade" placeholder="Quantidade" required><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <a href="{{ url_for('estoque') }}">Voltar</a>
+</body>
+</html>

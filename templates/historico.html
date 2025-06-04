@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Histórico</title>
+</head>
+<body>
+    <h2>Histórico de Retiradas</h2>
+    <a href="{{ url_for('estoque') }}">Voltar</a>
+    <ul>
+        {% for registro in registros %}
+            <li>{{ registro.data_hora.strftime('%d/%m/%Y %H:%M') }} - 
+                {{ registro.usuario.nome }} retirou {{ registro.quantidade }} de {{ registro.produto.nome }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

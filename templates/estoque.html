@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estoque</title>
+</head>
+<body>
+    <h2>Estoque</h2>
+    <a href="{{ url_for('cadastrar_produto') }}">Cadastrar Produto</a> | 
+    <a href="{{ url_for('historico') }}">Histórico</a> | 
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <ul>
+        {% for produto in produtos %}
+            <li>{{ produto.nome }} - {{ produto.quantidade }} unidades - 
+                <a href="{{ url_for('retirada', produto_id=produto.id) }}">Retirar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

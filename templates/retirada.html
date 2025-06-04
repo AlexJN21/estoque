@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retirada</title>
+</head>
+<body>
+    <h2>Retirar Produto: {{ produto.nome }}</h2>
+    <p>Quantidade disponível: {{ produto.quantidade }}</p>
+    <form method="POST">
+        <input type="number" name="quantidade" min="1" required>
+        <button type="submit">Confirmar Retirada</button>
+    </form>
+    <a href="{{ url_for('estoque') }}">Voltar</a>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
